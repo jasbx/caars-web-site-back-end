@@ -1,0 +1,34 @@
+{% extends "styling.html" %}
+{% block body %}
+<html class="no-js" lang="en">
+
+    <section id="home" class="welcome-hero">
+        
+            <nav class="nav">
+              <div class="navbar">
+                <div class="container nav-container">
+                    <input class="checkbox" type="checkbox" name="" id="" />
+                    <div class="hamburger-lines">
+                      <span class="line line1"></span>
+                      <span class="line line2"></span>
+                      <span class="line line3"></span>
+                    </div>  
+                  <div class="logo">
+                    <h1>Cars Delon</h1>
+                  </div>
+                  <div class="menu-items">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#serves">serves</a></li>
+                
+                    <li><a href="#new">new Cars</a></li>
+                    <li><a href="http://jams.pythonanywhere.com">portfolio</a></li>
+                    <li><a href="{%url "conect" %}">contact</a></li>
+                    <li><a href="#Featured">Featured Cars </a></li>
+                  </div>
+                </div>
+              </div>
+            </nav>
+      
+
+                <!--/.header-area-->
+ {% endblock body %}

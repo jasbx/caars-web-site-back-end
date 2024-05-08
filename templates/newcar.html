@@ -1,0 +1,63 @@
+	<!--new-cars start -->
+    {% extends "styling.html" %}
+    {% load static %}
+    {% block body %}
+    <section id="new-cars" class="new-cars">
+        <div class="container" id="new">
+            <div class="section-header">
+                <p>checkout <span>the</span> latest cars</p>
+                <h2>newest cars</h2>
+         
+
+
+            </div><!--/.section-header-->
+            <div class="new-cars-content">
+                <div class="owl-carousel owl-theme" id="new-cars-carousel">
+
+                    {% for car in cars %}
+                    <div class="new-cars-item">
+                       
+                        <div class="single-new-cars-item">
+                            <div class="row">
+                                
+                                <div class="col-md-7 col-sm-12">
+                                    <div class="new-cars-img">
+                                        <img src="{{car.img.url}}" alt="img"/>
+                                    </div><!--/.new-cars-img-->
+                                </div>
+                                <div class="col-md-5 col-sm-12">
+                                    <div class="new-cars-txt">
+                                        <h2><a href="#"> {{car.name}}<span> za100</span></a></h2>
+                                        <p>
+                                            {{car.description}}. 
+                                        </p>
+                                    
+                                        <button class="welcome-btn new-cars-btn" onclick="window.location.href='#'">
+                                        <a href="{% url "detalcars" car.slug  %}">
+
+                                            view details
+                                        </a>
+                                        </button>
+                                    </div><!--/.new-cars-txt-->	
+                                </div>
+                              
+                            </div>
+                            <!--/.row-->
+                        </div>
+                    
+                        <!--/.single-new-cars-item-->
+                    </div>
+                    {%endfor%}
+              
+    </div>
+
+                        </div><!--/.single-new-cars-item-->
+                    </div><!--/.new-cars-item-->
+                </div><!--/#new-cars-carousel-->
+            </div><!--/.new-cars-content-->
+        </div><!--/.container-->
+
+    </section><!--/.new-cars-->
+    <!--new-cars end -->
+
+    {% endblock body %}

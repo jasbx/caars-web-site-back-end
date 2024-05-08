@@ -1,0 +1,50 @@
+{% extends "styling.html" %}
+{% load static %}
+{% block body %}
+		<!--featured-cars start -->
+		<section id="featured-cars" class="featured-cars">
+			<div class="container" id="Featured">
+				<div class="section-header">
+					<p>checkout <span>the</span> featured cars</p>
+					<h2>featured cars</h2>
+				</div><!--/.section-header-->
+				
+				<div class="featured-cars-content">
+					<div class="row">
+{% for car in cars2 %}
+
+						<div class="col-lg-3 col-md-4 col-sm-6">
+							<div class="single-featured-cars">
+								<div class="featured-img-box">
+									<div class="featured-cars-img">
+										<img src="{{car.img.url}}" alt="cars">
+									</div>
+									<div class="featured-model-info">
+										<p>
+											model: {{car.model}}
+											<span class="featured-mi-span"> {{car.speed}} mi</span> 
+											<span class="featured-hp-span"> {{car.horspwoer}}HP</span>
+										{{car.color}}
+										</p>
+									</div>
+								</div>
+								<div class="featured-cars-txt">
+									<h2><a href="#">{{car.name}}</a></h2>
+									<h3>{{car.price}}</h3>
+									<p>
+										{{car.description}}
+									</p>
+								</div>
+							</div>
+						</div>
+						
+
+						{% endfor %}
+
+					</div>
+				</div>
+			</div><!--/.container-->
+
+		</section><!--/.featured-cars-->
+		<!--featured-cars end -->
+		{% endblock body %}

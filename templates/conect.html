@@ -1,0 +1,45 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static "css/conect.css" %} ">
+
+<div class="signupSection">
+
+    <div class="info" id="info">
+      <h2 class="btn"><a href="{% url "home" %}" > Back to Home</a></h2>
+      <h2>Conect Us  if  </h2>
+      <i class="icon ion-ios-ionic-outline" aria-hidden="true"></i>
+      <p>you Have proplem </p>
+    </div>
+
+    <form action="#" method="POST" class="signupForm" name="signupform">
+      {% csrf_token %}
+      <a href="{% url "home" %}" class="back"> Back to Home</a>
+      <h2>We are with you </h2>
+     
+      <ul class="noBullet">
+        <li>
+          <label for="username"></label>
+          <input type="text" class="inputFields" id="username" name="name" placeholder="name"  required/>
+        </li>
+ 
+        <li>
+          <label for="email"></label>
+          <input type="email" class="inputFields" id="email" name="email" placeholder="Email" value="" required/>
+        </li>
+
+        <li>
+          <label for="text"></label>
+          <textarea  class="inputFields" id="text" name="msg" placeholder="Massege"  ></textarea>
+        </li>
+        <li id="center-btn">
+          <input type="submit" id="join-btn" name="join" alt="Join" value="Send">
+          <input type="reset" id="join-btn" name="join" alt="Join" value="reset">
+      
+        </li>
+      
+        
+      </ul>
+    </form>
+</div>
+
+   

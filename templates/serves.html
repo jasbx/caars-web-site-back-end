@@ -1,0 +1,43 @@
+{% extends "styling.html" %}
+<!--service start -->
+{% load static %}
+{% block body %}
+<section id="service" class="service">
+
+    <div class="container" id="serves">
+   
+        <div class="service-content">
+            <div class="section-header">
+                <p>Our  serves </p>
+                <span>the</span>
+                <h2>cars</h2>
+
+
+
+            </div>
+            <div class="row">
+
+                {% for serv in serves %}
+                <div class="col-md-4 col-sm-6">
+                    <div class="single-service-item">
+                        <div class="single-service-icon">
+                            <div class="featured-cars-img">
+                                <img src="{{serv.img.url}}" alt="cars">
+                            </div>
+                        </div>
+                        <h2><a href="#">{{serv.name}} <span> of</span> car</a></h2>
+                        <p>
+                           {{serv.description}}
+                        </p>
+                    </div>
+                </div>
+
+                {% endfor %}
+      
+            </div>
+        </div>
+    </div><!--/.container-->
+
+</section><!--/.service-->
+<!--service end-->
+{% endblock body %}
